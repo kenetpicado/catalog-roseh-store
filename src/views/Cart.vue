@@ -17,7 +17,6 @@
 								C$ {{ item.price }}
 							</div>
 						</div>
-
 					</div>
 				</div>
 			</div>
