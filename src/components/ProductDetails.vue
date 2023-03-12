@@ -16,6 +16,15 @@
                 </button>
             </div>
 
+            <template v-if="colors.length > 0">
+                <div class="text-xs text-slate-500 mt-4">Disponibles</div>
+                <div class="flex gap-4 overflow-x-auto whitespace-nowrap scrollbar-hide">
+                    <button type="button" v-for="(color, index) in colors" :key="index">
+                        <div class="circle active-item select-none" :style="`background-color: ${color}`"></div>
+                    </button>
+                </div>
+            </template>
+
             <div class="flex justify-between items-center mt-4">
                 <span class="text-2xl font-bold tracking-wider">C$ {{ selectedItem.price }}</span>
                 <button @click="addToCart()" class="btn-primary"><i class="fas fa-shopping-cart"></i></button>
@@ -39,9 +48,12 @@ const props = defineProps({
 });
 
 const selectedItem = ref({});
+const colors = ref([]);
+const selectedColor = ref('');
 
 onMounted(() => {
     selectedItem.value = props.product.stocks[0];
+    colors.value = props.product.stocks[0].colors;
 });
 
 function activeClass(id) {
@@ -50,6 +62,7 @@ function activeClass(id) {
 
 function selectItem(stock) {
     selectedItem.value = stock;
+    colors.value = stock.colors;
 }
 
 function addToCart() {

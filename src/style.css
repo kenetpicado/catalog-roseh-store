@@ -37,6 +37,15 @@
   }
 }
 
+.circle {
+    width: 2rem;
+    height: 2rem;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    background: #fff;
+}
+
 .scrollbar-hide::-webkit-scrollbar {
     display: none;
     -ms-overflow-style: none;  /* IE and Edge */
