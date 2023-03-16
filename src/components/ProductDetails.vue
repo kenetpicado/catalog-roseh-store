@@ -5,7 +5,7 @@
             <div class="md:mx-auto md:px-10">
                 <div class="relative">
                     <div class="absolute top-0 right-0 bg-primary-500 mr-2">
-                        <img :src="logoPath" alt="" class="w-14 shadow-xl">
+                        <img src="https://i.postimg.cc/s2LJMz7P/logo.png" alt="" class="w-14 shadow-xl">
                     </div>
                     <img :src="product.image" alt="" class="rounded-xl mx-auto shadow-xl mb-4">
                 </div>
@@ -55,8 +55,6 @@ const props = defineProps({
         required: true
     }
 });
-
-const logoPath = ref('/src/assets/logo.PNG');
 
 const selectedItem = ref({});
 const colors = ref([]);
