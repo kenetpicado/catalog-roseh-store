@@ -3,7 +3,12 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mx-4">
             <div class="md:mx-auto md:px-10">
-                <img :src="product.image" alt="" class="rounded-xl mx-auto shadow-xl mb-4">
+                <div class="relative">
+                    <div class="absolute top-0 right-0 bg-primary-500 mr-2">
+                        <img src="/logo.PNG" alt="" class="w-14 shadow-xl">
+                    </div>
+                    <img :src="product.image" alt="" class="rounded-xl mx-auto shadow-xl mb-4">
+                </div>
             </div>
             <div class="space-y-6">
                 <h4 class="font-semibold tracking-wider text-sm text-center md:text-left uppercase">
