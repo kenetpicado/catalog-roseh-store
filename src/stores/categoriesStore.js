@@ -12,7 +12,7 @@ export const useCategoriesStore = defineStore('categories', {
     actions: {
         set(item) {
             this.categories = item
-        }
+        },
     },
     persist: true,
 })

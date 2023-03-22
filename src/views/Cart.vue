@@ -40,15 +40,26 @@ import Topbar from "/src/components/Topbar.vue";
 import { storeToRefs } from 'pinia'
 import { useCartStore } from '/src/stores/cartStore.js'
 import { computed, inject } from 'vue';
-import { toast } from "/src/utils/toast.js"
+import { toast } from "/src/utils/toast.js";
+import { useProductsStore } from "/src/stores/productsStore.js";
 
 const store = useCartStore();
+const storeProducts = useProductsStore();
 const { cart } = storeToRefs(store);
 
 const swal = inject('$swal')
 
 const total = computed(() => {
 	return cart.value.reduce((total, item) => total + item.price, 0);
+});
+
+cart.value.forEach((item, index) => {
+	if (!storeProducts.products.find(product => product.sku === item.sku)) {
+		store.removeItem(index);
+	}
+	if (!storeProducts.products.flatMap(product => product.stocks.map(stock => stock.id)).find(id => id === item.id)) {
+		store.removeItem(index);
+	}
 });
 
 const phone = import.meta.env.VITE_PHONE_NUMBER;

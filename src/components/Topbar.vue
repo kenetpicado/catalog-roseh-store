@@ -1,6 +1,7 @@
 <template>
     <nav class="w-full flex items-center h-14 justify-between shadow px-4 bg-white">
-        <span v-if="isHome"></span>
+        <span v-if="isHome">
+        </span>
         <span v-else @click="$router.back()" class="cursor-pointer">
             <i class="fas fa-chevron-left"></i>
         </span>
@@ -18,7 +19,7 @@
 <script setup>
 import { useCartStore } from "/src/stores/cartStore.js";
 import { useRoute } from "vue-router"
-import { computed } from "vue"
+import {computed } from "vue"
 
 const store = useCartStore();
 const route = useRoute();
