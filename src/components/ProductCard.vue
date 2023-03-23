@@ -3,7 +3,9 @@
         <img :src="product.image" alt="" class="rounded-lg shadow-xl">
         <div class="mt-4">
             <div class="text-xs tracking-wide truncate uppercase">{{ product.description }}</div>
-            <div class="text-md tracking-wide font-bold mt-2">C$ {{ product.stocks[0].price }}</div>
+            <div class="text-md tracking-wide font-bold mt-2">
+                C$ {{ product.stocks[0].price }}
+            </div>
         </div>
     </div>
 </template>
