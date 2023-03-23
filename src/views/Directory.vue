@@ -38,14 +38,6 @@
                 </a>
             </li>
         </ul>
-
-        <div class="text-xs text-slate-300 mt-10">
-            <p class="text-center ">
-                Desarrollado por Kenet P.
-                <br>
-                kenetpicado1@gmail.com
-            </p>
-        </div>
     </div>
 </template>
 
