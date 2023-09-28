@@ -50,7 +50,7 @@ const { cart } = storeToRefs(store);
 const swal = inject('$swal')
 
 const total = computed(() => {
-	return cart.value.reduce((total, item) => total + item.price, 0);
+			return cart.value.reduce((total, item) => total + item.price, 0);
 });
 
 cart.value.forEach((item, index) => {
